@@ -14,18 +14,19 @@ dataset. So, if you want to run `wmt32k` problem which is a de/en translation
 dataset, you should download language models first with the following command.
 
 ```
-$ pip install spacy
-$ python -m spacy download en
-$ python -m spacy download de
+$ pip install -U -r requirements.txt
+$ python -m spacy download en_core_web_sm
+$ python -m spacy download ja_core_news_sm
 ```
 
 ## Usage
 
 1. Train a model.
+If you choose either wmt32k or lm1b for your problem set, comment it out if you do not want to use it.
+After commenting out, execute the following command
+
 ```
-$ python train.py --problem wmt32k --output_dir ./output --data_dir ./wmt32k_data
-or
-$ python train.py --problem lm1b --output_dir ./output --data_dir ./lm1b_data
+source train.sh
 ```
 
 If you want to try `fast_transformer`, give a `model` argument after installing
